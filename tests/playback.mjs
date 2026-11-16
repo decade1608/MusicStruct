@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import {resolvePlayback,officialSource} from '../frontend/src/playback.mjs';
+const track={key:'TEST',title:'Track',artist:'Artist',audioUrl:'https://incompetech.com/test.mp3',sourceUrl:'https://incompetech.com/music/'};
+const missing=()=>Promise.reject(Object.assign(Error('Endpoint not found.'),{status:404}));
+const legacy=await resolvePlayback(track,{api:async()=>[],send:missing});assert.equal(legacy.legacy,true);assert.equal(legacy.song.transient,true);assert.equal(legacy.song.playbackUrl,track.audioUrl);
+const local=await resolvePlayback(track,{api:async p=>p.includes('/metadata')?{}:[{id:1,title:'Track',artist:'Artist'}],send:missing});assert.equal(local.song.playbackUrl,'/api/songs/1/audio');
+const metadata={...track,audioUrl:undefined,sourceUrl:'https://open.spotify.com/track/abc'};const external=await resolvePlayback(metadata,{api:async()=>[],send:()=>{throw Error('Must not need new API');}});assert.equal(external.youtube,metadata);assert.equal(external.sourceUrl,metadata.sourceUrl);
+const attached=await resolvePlayback(metadata,{api:async p=>p.includes('/metadata')?{}:[{id:7,title:'Track',artist:'Artist'}]});assert.equal(attached.song.playbackUrl,'/api/songs/7/audio');
+assert.equal(officialSource({sourceUrl:'javascript:alert(1)'}),null);assert.equal(officialSource({sourceUrl:'https://open.spotify.com.evil.test/x'}),null);
+await assert.rejects(resolvePlayback(track,{api:async()=>[],send:async()=>{throw Object.assign(Error('offline'),{status:503});}}),/offline/);
+console.log('PASS: legacy playback fallback, local recording preference, metadata redirect, source validation, genuine error preservation');

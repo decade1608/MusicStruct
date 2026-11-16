@@ -1,0 +1,14 @@
+**/node_modules/
+frontend/dist/
+backend/bin/
+.local/
+*.log
+.env
+.env.*
+!.env.example
+*.dump
+*.backup
+*.pem
+*.key
+.DS_Store
+Thumbs.db

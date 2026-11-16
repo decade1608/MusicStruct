@@ -1,0 +1,76 @@
+import {checkCollections} from './collections.mjs';
+import {checkNextFeatures} from './next-features.mjs';
+import {mkdtemp,mkdir} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {fileURLToPath} from 'node:url';
+import {backend,createServer,validateSong} from '../api/server.mjs';
+// The test runner points this process at a fresh database, never the application database.
+assert.match(process.env.MUSICSTRUCT_DATABASE_URL??'',/dbname=musicstruct_test_/);
+await backend(['init'],await readFile(new URL('../database/schema.sql',import.meta.url),'utf8'));
+await backend(['init'],await readFile(new URL('../database/workflows.sql',import.meta.url),'utf8'));
+await backend(['init'],await readFile(new URL('../database/media.sql',import.meta.url),'utf8'));
+await backend(['init'],await readFile(new URL('../database/collections.sql',import.meta.url),'utf8'));
+const demos=JSON.parse(await readFile(new URL('../backend/data/demo.json',import.meta.url),'utf8'));
+for(const s of demos)await backend(['add'],JSON.stringify(s));
+assert.equal((await backend(['list'])).length,15);
+const mediaBase=new URL('../.local/test-media/',import.meta.url);await mkdir(mediaBase,{recursive:true});process.env.MUSICSTRUCT_MEDIA_DIR=await mkdtemp(fileURLToPath(mediaBase)+'run-');
+process.env.MUSICSTRUCT_CATALOG_FIXTURE=fileURLToPath(new URL('./catalog-fixture.json',import.meta.url));
+const server=createServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));const base=`http://127.0.0.1:${server.address().port}`;
+async function get(path){const r=await fetch(base+(path.startsWith('/api/')?path:'/api'+path));return [r.status,await r.json()];}
+async function post(song){const r=await fetch(base+'/api/songs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(song)});return [r.status,await r.json()];}
+async function write(path,data={},method='POST'){const r=await fetch(base+'/api'+path,{method,headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});return [r.status,await r.json()];}
+try{
+ assert.equal((await get('/api/health'))[0],200);
+ assert.equal((await get('/api/songs?q=Midnight'))[1].length,1);
+ assert.equal((await get('/api/songs?genre=Jazz'))[1].length,3);
+ assert.equal((await get('/api/songs?q=notfound'))[1].length,0);
+ assert.equal((await get('/api/songs/1'))[1].sections[1].name,'Verse');
+ assert.equal((await get('/api/songs/999'))[0],404);
+ assert.ok(Math.abs((await get('/api/compare?a=1&b=1'))[1].score-1)<.000001);
+ const score=(await get('/api/compare?a=1&b=2'))[1];assert.ok(Math.abs(score.score-Object.entries(score.features).reduce((sum,[key,v])=>sum+v*score.weights[key],0))<.000001);
+ assert.equal((await get('/api/compare?a=2&b=1'))[1].score,score.score);
+ assert.equal((await get('/api/compare?a=1&b=999'))[0],404);
+ assert.equal((await get('/api/compare?a=1x&b=2'))[0],400);
+ const song={...demos[0],id:100,title:'Quoted "नमस्ते" — café',artist:"O'Connor",synthetic:false,sections:[{name:'Second',start:30,end:50},{name:'First',start:0,end:20}]};
+ assert.equal((await post(song))[0],201);
+ assert.equal((await post(song))[0],409);
+ const loaded=(await get('/api/songs/100'))[1];assert.equal(loaded.title,song.title);assert.deepEqual(loaded.sections,song.sections);assert.deepEqual(loaded.components,song.components);
+ assert.equal((await post({...song,id:101,energy:2}))[0],400);
+ assert.equal((await post({...song,id:101,sections:[{name:'Bad',start:0,end:1000}]}))[0],400);
+ assert.throws(()=>validateSong({...song,id:101,title:'a'.repeat(100)}));
+ assert.throws(()=>validateSong({...song,id:101,components:null,tempo:Infinity}));
+ await assert.rejects(backend(['add'],JSON.stringify({...song,id:102,sections:[{name:'Bad',start:0,end:1000}]})));
+ assert.ok(!(await backend(['list'])).some(s=>s.id===102),'transaction must roll back song and clips');
+ await assert.rejects(backend(['add'],JSON.stringify({...song,id:103,tempo:-4})));
+ const before=await backend(['list']);assert.equal(before.length,16);assert.deepEqual(await backend(['list']),before,'fresh C process must reload persisted data');
+ const html=await fetch(base+'/');assert.equal(html.status,200);assert.match(await html.text(),/MusicStruct/);
+ const origin=await fetch(base+'/api/songs',{method:'POST',headers:{'Content-Type':'application/json',Origin:'https://example.com'},body:JSON.stringify({...song,id:200})});assert.equal(origin.status,403);
+ const rec=(await get('/api/songs/1/recommendations'))[1];assert.equal(rec.length,6);assert.ok(rec.every(x=>x.song.id!==1));for(let i=1;i<rec.length;i++)assert.ok(rec[i-1].score>=rec[i].score);
+ const sorted=(await get('/api/songs?sort=tempo'))[1];for(let i=1;i<sorted.length;i++)assert.ok(sorted[i-1].tempo<=sorted[i].tempo);
+ assert.equal((await get('/api/songs?q=CIRCUIT'))[1].length,1);assert.equal((await get('/api/songs?q='+encodeURIComponent('नमस्ते')))[1].length,1);
+ assert.ok(score.structure.score>=0&&score.structure.score<=1);
+ assert.equal((await write('/songs/100',{...song,title:'Edited track'},'PUT'))[0],200);assert.equal((await get('/api/songs/100'))[1].title,'Edited track');
+ assert.equal((await write('/undo'))[0],200);assert.equal((await get('/api/songs/100'))[1].title,song.title);
+ assert.equal((await write('/songs/100',{},'DELETE'))[0],200);assert.equal((await get('/api/songs/100'))[0],404);assert.equal((await write('/undo'))[0],200);assert.deepEqual((await get('/api/songs/100'))[1].sections,song.sections);
+ assert.equal((await write('/songs/100',{...song,sections:[{name:'Invalid',start:10,end:9}]},'PUT'))[0],400);assert.equal((await get('/api/songs/100'))[1].title,song.title);
+ await write('/queue',{id:2});await write('/queue',{id:1});await write('/queue',{id:2});assert.equal((await get('/api/queue'))[1].filter(j=>j.status==='pending').length,2);
+ assert.equal((await write('/queue/process'))[1].id,2);assert.equal((await write('/queue/process'))[1].id,1);assert.equal((await write('/queue/process'))[1].empty,true);
+ assert.equal((await get('/api/queue'))[1].filter(j=>j.status==='done').length,2);
+ await write('/queue',{id:3});const pending=(await get('/api/queue'))[1].find(j=>j.status==='pending');assert.equal((await write(`/queue/${pending.ticket}`,{},'DELETE'))[1].cancelled,true);
+ assert.equal((await write('/queue',{id:999}))[0],400);
+ const exported=(await get('/api/export'))[1];assert.equal(exported.songs.length,16);const imported=(await write('/import',exported))[1];assert.equal(imported.added,0);assert.equal(imported.skipped,16);
+ assert.equal((await write('/import',[{...song,id:200},{...song,id:201,energy:4}]))[0],400);assert.equal((await get('/api/songs/200'))[0],404);
+ const valid=(await write('/import',[{...song,id:200,title:'Imported'},{...song,id:201,title:'Imported II'}]))[1];assert.equal(valid.added,2);
+ assert.equal((await get('/api/history'))[1][0].song_id,201);await write('/undo');assert.equal((await get('/api/songs/201'))[0],404);assert.equal((await get('/api/songs/200'))[0],200);
+ const q2=(await get('/api/queue'))[1];assert.deepEqual(await backend(['queue']),q2);
+ await backend(['seed-complete']);await write('/songs/1',{},'DELETE');
+ await promisify(execFile)(process.execPath,[fileURLToPath(new URL('../scripts/seed.mjs',import.meta.url))],{windowsHide:true});
+ assert.equal((await get('/api/songs/1'))[0],404,'startup must not resurrect deleted demo songs');
+ await write('/undo');assert.equal((await get('/api/songs/1'))[0],200);
+ await checkNextFeatures(base,backend);
+ await checkCollections(base);
+ console.log('PASS: PostgreSQL persistence/rollback, C search/sort/recommendations/LCS, CRUD + undo, FIFO processing/cancel/deduplication, import/export, UTF-8, validation, origin checks');
+}finally{await new Promise(r=>server.close(r));}

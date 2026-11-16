@@ -1,0 +1,1237 @@
+[
+  {
+    "id": 1,
+    "title": "Midnight Circuit",
+    "artist": "Parallel Lines",
+    "album": "Night Studies",
+    "genre": "Electronic",
+    "year": 2020,
+    "duration": 180,
+    "tempo": 72,
+    "energy": 0.25,
+    "danceability": 0.2,
+    "valence": 0.18,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -9,
+    "musical_key": 0,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 18
+      },
+      {
+        "name": "Verse",
+        "start": 18,
+        "end": 54
+      },
+      {
+        "name": "Chorus",
+        "start": 54,
+        "end": 90
+      },
+      {
+        "name": "Verse II",
+        "start": 90,
+        "end": 130
+      },
+      {
+        "name": "Bridge",
+        "start": 130,
+        "end": 160
+      },
+      {
+        "name": "Outro",
+        "start": 160,
+        "end": 180
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 168
+      },
+      {
+        "name": "Drums",
+        "start": 18,
+        "end": 90
+      },
+      {
+        "name": "Drums",
+        "start": 98,
+        "end": 165
+      },
+      {
+        "name": "Bass",
+        "start": 22,
+        "end": 160
+      },
+      {
+        "name": "Pads",
+        "start": 54,
+        "end": 130
+      },
+      {
+        "name": "Pads",
+        "start": 80,
+        "end": 172
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Paper Satellites",
+    "artist": "The North Room",
+    "album": "Small Worlds",
+    "genre": "Indie",
+    "year": 2021,
+    "duration": 187,
+    "tempo": 85,
+    "energy": 0.32,
+    "danceability": 0.31,
+    "valence": 0.27,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -10,
+    "musical_key": 1,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 28
+      },
+      {
+        "name": "Theme A",
+        "start": 28,
+        "end": 70
+      },
+      {
+        "name": "Theme B",
+        "start": 70,
+        "end": 110
+      },
+      {
+        "name": "Solo",
+        "start": 110,
+        "end": 150
+      },
+      {
+        "name": "Outro",
+        "start": 150,
+        "end": 187
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 175
+      },
+      {
+        "name": "Drums",
+        "start": 28,
+        "end": 110
+      },
+      {
+        "name": "Drums",
+        "start": 118,
+        "end": 172
+      },
+      {
+        "name": "Bass",
+        "start": 32,
+        "end": 167
+      },
+      {
+        "name": "Guitar",
+        "start": 70,
+        "end": 150
+      },
+      {
+        "name": "Guitar",
+        "start": 100,
+        "end": 179
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Amber Coast",
+    "artist": "Mira Sol",
+    "album": "Coastal Notes",
+    "genre": "Pop",
+    "year": 2022,
+    "duration": 194,
+    "tempo": 98,
+    "energy": 0.39,
+    "danceability": 0.42,
+    "valence": 0.36,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -11,
+    "musical_key": 2,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 12
+      },
+      {
+        "name": "Verse",
+        "start": 12,
+        "end": 48
+      },
+      {
+        "name": "Chorus",
+        "start": 48,
+        "end": 84
+      },
+      {
+        "name": "Verse II",
+        "start": 84,
+        "end": 120
+      },
+      {
+        "name": "Bridge",
+        "start": 120,
+        "end": 156
+      },
+      {
+        "name": "Outro",
+        "start": 156,
+        "end": 194
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 182
+      },
+      {
+        "name": "Drums",
+        "start": 12,
+        "end": 84
+      },
+      {
+        "name": "Drums",
+        "start": 92,
+        "end": 179
+      },
+      {
+        "name": "Bass",
+        "start": 16,
+        "end": 174
+      },
+      {
+        "name": "Pads",
+        "start": 48,
+        "end": 120
+      },
+      {
+        "name": "Pads",
+        "start": 74,
+        "end": 186
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Glass Gardens",
+    "artist": "Quiet Atlas",
+    "album": "Night Studies",
+    "genre": "Ambient",
+    "year": 2023,
+    "duration": 201,
+    "tempo": 111,
+    "energy": 0.46,
+    "danceability": 0.53,
+    "valence": 0.45,
+    "acousticness": 0.12,
+    "instrumentalness": 0.94,
+    "speechiness": 0.04,
+    "loudness": -12,
+    "musical_key": 3,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 18
+      },
+      {
+        "name": "Verse",
+        "start": 18,
+        "end": 54
+      },
+      {
+        "name": "Chorus",
+        "start": 54,
+        "end": 90
+      },
+      {
+        "name": "Verse II",
+        "start": 90,
+        "end": 130
+      },
+      {
+        "name": "Bridge",
+        "start": 130,
+        "end": 160
+      },
+      {
+        "name": "Outro",
+        "start": 160,
+        "end": 201
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 189
+      },
+      {
+        "name": "Drums",
+        "start": 18,
+        "end": 90
+      },
+      {
+        "name": "Drums",
+        "start": 98,
+        "end": 186
+      },
+      {
+        "name": "Bass",
+        "start": 22,
+        "end": 181
+      },
+      {
+        "name": "Guitar",
+        "start": 54,
+        "end": 130
+      },
+      {
+        "name": "Guitar",
+        "start": 80,
+        "end": 193
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Slow Bloom",
+    "artist": "June Quartet",
+    "album": "Small Worlds",
+    "genre": "Jazz",
+    "year": 2024,
+    "duration": 208,
+    "tempo": 124,
+    "energy": 0.53,
+    "danceability": 0.64,
+    "valence": 0.54,
+    "acousticness": 0.88,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -13,
+    "musical_key": 4,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 28
+      },
+      {
+        "name": "Theme A",
+        "start": 28,
+        "end": 70
+      },
+      {
+        "name": "Theme B",
+        "start": 70,
+        "end": 110
+      },
+      {
+        "name": "Solo",
+        "start": 110,
+        "end": 150
+      },
+      {
+        "name": "Outro",
+        "start": 150,
+        "end": 208
+      }
+    ],
+    "components": [
+      {
+        "name": "Piano",
+        "start": 0,
+        "end": 196
+      },
+      {
+        "name": "Drums",
+        "start": 28,
+        "end": 110
+      },
+      {
+        "name": "Drums",
+        "start": 118,
+        "end": 193
+      },
+      {
+        "name": "Bass",
+        "start": 32,
+        "end": 188
+      },
+      {
+        "name": "Pads",
+        "start": 70,
+        "end": 150
+      },
+      {
+        "name": "Pads",
+        "start": 100,
+        "end": 200
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Velvet Transit",
+    "artist": "Parallel Lines",
+    "album": "Coastal Notes",
+    "genre": "Electronic",
+    "year": 2025,
+    "duration": 215,
+    "tempo": 137,
+    "energy": 0.6,
+    "danceability": 0.75,
+    "valence": 0.63,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -14,
+    "musical_key": 5,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 12
+      },
+      {
+        "name": "Verse",
+        "start": 12,
+        "end": 48
+      },
+      {
+        "name": "Chorus",
+        "start": 48,
+        "end": 84
+      },
+      {
+        "name": "Verse II",
+        "start": 84,
+        "end": 120
+      },
+      {
+        "name": "Bridge",
+        "start": 120,
+        "end": 156
+      },
+      {
+        "name": "Outro",
+        "start": 156,
+        "end": 215
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 203
+      },
+      {
+        "name": "Drums",
+        "start": 12,
+        "end": 84
+      },
+      {
+        "name": "Drums",
+        "start": 92,
+        "end": 200
+      },
+      {
+        "name": "Bass",
+        "start": 16,
+        "end": 195
+      },
+      {
+        "name": "Guitar",
+        "start": 48,
+        "end": 120
+      },
+      {
+        "name": "Guitar",
+        "start": 74,
+        "end": 207
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "After the Rain",
+    "artist": "The North Room",
+    "album": "Night Studies",
+    "genre": "Indie",
+    "year": 2020,
+    "duration": 222,
+    "tempo": 150,
+    "energy": 0.67,
+    "danceability": 0.86,
+    "valence": 0.72,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -15,
+    "musical_key": 6,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 18
+      },
+      {
+        "name": "Verse",
+        "start": 18,
+        "end": 54
+      },
+      {
+        "name": "Chorus",
+        "start": 54,
+        "end": 90
+      },
+      {
+        "name": "Verse II",
+        "start": 90,
+        "end": 130
+      },
+      {
+        "name": "Bridge",
+        "start": 130,
+        "end": 160
+      },
+      {
+        "name": "Outro",
+        "start": 160,
+        "end": 222
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 210
+      },
+      {
+        "name": "Drums",
+        "start": 18,
+        "end": 90
+      },
+      {
+        "name": "Drums",
+        "start": 98,
+        "end": 207
+      },
+      {
+        "name": "Bass",
+        "start": 22,
+        "end": 202
+      },
+      {
+        "name": "Pads",
+        "start": 54,
+        "end": 130
+      },
+      {
+        "name": "Pads",
+        "start": 80,
+        "end": 214
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Signal / Noise",
+    "artist": "Mira Sol",
+    "album": "Small Worlds",
+    "genre": "Pop",
+    "year": 2021,
+    "duration": 229,
+    "tempo": 163,
+    "energy": 0.74,
+    "danceability": 0.27,
+    "valence": 0.81,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -16,
+    "musical_key": 7,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 28
+      },
+      {
+        "name": "Theme A",
+        "start": 28,
+        "end": 70
+      },
+      {
+        "name": "Theme B",
+        "start": 70,
+        "end": 110
+      },
+      {
+        "name": "Solo",
+        "start": 110,
+        "end": 150
+      },
+      {
+        "name": "Outro",
+        "start": 150,
+        "end": 229
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 217
+      },
+      {
+        "name": "Drums",
+        "start": 28,
+        "end": 110
+      },
+      {
+        "name": "Drums",
+        "start": 118,
+        "end": 214
+      },
+      {
+        "name": "Bass",
+        "start": 32,
+        "end": 209
+      },
+      {
+        "name": "Guitar",
+        "start": 70,
+        "end": 150
+      },
+      {
+        "name": "Guitar",
+        "start": 100,
+        "end": 221
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Golden Hour",
+    "artist": "Quiet Atlas",
+    "album": "Coastal Notes",
+    "genre": "Ambient",
+    "year": 2022,
+    "duration": 236,
+    "tempo": 83,
+    "energy": 0.81,
+    "danceability": 0.38,
+    "valence": 0.9,
+    "acousticness": 0.12,
+    "instrumentalness": 0.94,
+    "speechiness": 0.04,
+    "loudness": -9,
+    "musical_key": 8,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 12
+      },
+      {
+        "name": "Verse",
+        "start": 12,
+        "end": 48
+      },
+      {
+        "name": "Chorus",
+        "start": 48,
+        "end": 84
+      },
+      {
+        "name": "Verse II",
+        "start": 84,
+        "end": 120
+      },
+      {
+        "name": "Bridge",
+        "start": 120,
+        "end": 156
+      },
+      {
+        "name": "Outro",
+        "start": 156,
+        "end": 236
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 224
+      },
+      {
+        "name": "Drums",
+        "start": 12,
+        "end": 84
+      },
+      {
+        "name": "Drums",
+        "start": 92,
+        "end": 221
+      },
+      {
+        "name": "Bass",
+        "start": 16,
+        "end": 216
+      },
+      {
+        "name": "Pads",
+        "start": 48,
+        "end": 120
+      },
+      {
+        "name": "Pads",
+        "start": 74,
+        "end": 228
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Blue Reverie",
+    "artist": "June Quartet",
+    "album": "Night Studies",
+    "genre": "Jazz",
+    "year": 2023,
+    "duration": 243,
+    "tempo": 96,
+    "energy": 0.88,
+    "danceability": 0.49,
+    "valence": 0.25,
+    "acousticness": 0.88,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -10,
+    "musical_key": 9,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 18
+      },
+      {
+        "name": "Verse",
+        "start": 18,
+        "end": 54
+      },
+      {
+        "name": "Chorus",
+        "start": 54,
+        "end": 90
+      },
+      {
+        "name": "Verse II",
+        "start": 90,
+        "end": 130
+      },
+      {
+        "name": "Bridge",
+        "start": 130,
+        "end": 160
+      },
+      {
+        "name": "Outro",
+        "start": 160,
+        "end": 243
+      }
+    ],
+    "components": [
+      {
+        "name": "Piano",
+        "start": 0,
+        "end": 231
+      },
+      {
+        "name": "Drums",
+        "start": 18,
+        "end": 90
+      },
+      {
+        "name": "Drums",
+        "start": 98,
+        "end": 228
+      },
+      {
+        "name": "Bass",
+        "start": 22,
+        "end": 223
+      },
+      {
+        "name": "Guitar",
+        "start": 54,
+        "end": 130
+      },
+      {
+        "name": "Guitar",
+        "start": 80,
+        "end": 235
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Neon Steps",
+    "artist": "Parallel Lines",
+    "album": "Small Worlds",
+    "genre": "Electronic",
+    "year": 2024,
+    "duration": 250,
+    "tempo": 109,
+    "energy": 0.3,
+    "danceability": 0.6,
+    "valence": 0.34,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -11,
+    "musical_key": 10,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 28
+      },
+      {
+        "name": "Theme A",
+        "start": 28,
+        "end": 70
+      },
+      {
+        "name": "Theme B",
+        "start": 70,
+        "end": 110
+      },
+      {
+        "name": "Solo",
+        "start": 110,
+        "end": 150
+      },
+      {
+        "name": "Outro",
+        "start": 150,
+        "end": 250
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 238
+      },
+      {
+        "name": "Drums",
+        "start": 28,
+        "end": 110
+      },
+      {
+        "name": "Drums",
+        "start": 118,
+        "end": 235
+      },
+      {
+        "name": "Bass",
+        "start": 32,
+        "end": 230
+      },
+      {
+        "name": "Pads",
+        "start": 70,
+        "end": 150
+      },
+      {
+        "name": "Pads",
+        "start": 100,
+        "end": 242
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Open Water",
+    "artist": "The North Room",
+    "album": "Coastal Notes",
+    "genre": "Indie",
+    "year": 2025,
+    "duration": 257,
+    "tempo": 122,
+    "energy": 0.37,
+    "danceability": 0.71,
+    "valence": 0.43,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -12,
+    "musical_key": 11,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 12
+      },
+      {
+        "name": "Verse",
+        "start": 12,
+        "end": 48
+      },
+      {
+        "name": "Chorus",
+        "start": 48,
+        "end": 84
+      },
+      {
+        "name": "Verse II",
+        "start": 84,
+        "end": 120
+      },
+      {
+        "name": "Bridge",
+        "start": 120,
+        "end": 156
+      },
+      {
+        "name": "Outro",
+        "start": 156,
+        "end": 257
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 245
+      },
+      {
+        "name": "Drums",
+        "start": 12,
+        "end": 84
+      },
+      {
+        "name": "Drums",
+        "start": 92,
+        "end": 242
+      },
+      {
+        "name": "Bass",
+        "start": 16,
+        "end": 237
+      },
+      {
+        "name": "Guitar",
+        "start": 48,
+        "end": 120
+      },
+      {
+        "name": "Guitar",
+        "start": 74,
+        "end": 249
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Cedar & Strings",
+    "artist": "Mira Sol",
+    "album": "Night Studies",
+    "genre": "Pop",
+    "year": 2020,
+    "duration": 264,
+    "tempo": 135,
+    "energy": 0.44,
+    "danceability": 0.82,
+    "valence": 0.52,
+    "acousticness": 0.12,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -13,
+    "musical_key": 0,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 18
+      },
+      {
+        "name": "Verse",
+        "start": 18,
+        "end": 54
+      },
+      {
+        "name": "Chorus",
+        "start": 54,
+        "end": 90
+      },
+      {
+        "name": "Verse II",
+        "start": 90,
+        "end": 130
+      },
+      {
+        "name": "Bridge",
+        "start": 130,
+        "end": 160
+      },
+      {
+        "name": "Outro",
+        "start": 160,
+        "end": 264
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 252
+      },
+      {
+        "name": "Drums",
+        "start": 18,
+        "end": 90
+      },
+      {
+        "name": "Drums",
+        "start": 98,
+        "end": 249
+      },
+      {
+        "name": "Bass",
+        "start": 22,
+        "end": 244
+      },
+      {
+        "name": "Pads",
+        "start": 54,
+        "end": 130
+      },
+      {
+        "name": "Pads",
+        "start": 80,
+        "end": 256
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "City Echoes",
+    "artist": "Quiet Atlas",
+    "album": "Small Worlds",
+    "genre": "Ambient",
+    "year": 2021,
+    "duration": 271,
+    "tempo": 148,
+    "energy": 0.51,
+    "danceability": 0.23,
+    "valence": 0.61,
+    "acousticness": 0.12,
+    "instrumentalness": 0.94,
+    "speechiness": 0.04,
+    "loudness": -14,
+    "musical_key": 1,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 28
+      },
+      {
+        "name": "Theme A",
+        "start": 28,
+        "end": 70
+      },
+      {
+        "name": "Theme B",
+        "start": 70,
+        "end": 110
+      },
+      {
+        "name": "Solo",
+        "start": 110,
+        "end": 150
+      },
+      {
+        "name": "Outro",
+        "start": 150,
+        "end": 271
+      }
+    ],
+    "components": [
+      {
+        "name": "Synth",
+        "start": 0,
+        "end": 259
+      },
+      {
+        "name": "Drums",
+        "start": 28,
+        "end": 110
+      },
+      {
+        "name": "Drums",
+        "start": 118,
+        "end": 256
+      },
+      {
+        "name": "Bass",
+        "start": 32,
+        "end": 251
+      },
+      {
+        "name": "Guitar",
+        "start": 70,
+        "end": 150
+      },
+      {
+        "name": "Guitar",
+        "start": 100,
+        "end": 263
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Last Light",
+    "artist": "June Quartet",
+    "album": "Coastal Notes",
+    "genre": "Jazz",
+    "year": 2022,
+    "duration": 278,
+    "tempo": 161,
+    "energy": 0.58,
+    "danceability": 0.34,
+    "valence": 0.7,
+    "acousticness": 0.88,
+    "instrumentalness": 0.3,
+    "speechiness": 0.04,
+    "loudness": -15,
+    "musical_key": 2,
+    "time_signature": 4,
+    "synthetic": true,
+    "sections": [
+      {
+        "name": "Intro",
+        "start": 0,
+        "end": 12
+      },
+      {
+        "name": "Verse",
+        "start": 12,
+        "end": 48
+      },
+      {
+        "name": "Chorus",
+        "start": 48,
+        "end": 84
+      },
+      {
+        "name": "Verse II",
+        "start": 84,
+        "end": 120
+      },
+      {
+        "name": "Bridge",
+        "start": 120,
+        "end": 156
+      },
+      {
+        "name": "Outro",
+        "start": 156,
+        "end": 278
+      }
+    ],
+    "components": [
+      {
+        "name": "Piano",
+        "start": 0,
+        "end": 266
+      },
+      {
+        "name": "Drums",
+        "start": 12,
+        "end": 84
+      },
+      {
+        "name": "Drums",
+        "start": 92,
+        "end": 263
+      },
+      {
+        "name": "Bass",
+        "start": 16,
+        "end": 258
+      },
+      {
+        "name": "Pads",
+        "start": 48,
+        "end": 120
+      },
+      {
+        "name": "Pads",
+        "start": 74,
+        "end": 270
+      }
+    ]
+  }
+]

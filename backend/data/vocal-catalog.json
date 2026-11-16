@@ -1,0 +1,54 @@
+[
+  {
+    "key": "VC0000000001",
+    "title": "Amazing Grace — Jazz Vocal",
+    "artist": "USAF Band Airmen of Note",
+    "duration": 385,
+    "genre": "Jazz",
+    "year": 2011,
+    "filename": "Amazing Grace jazz vocal.ogg",
+    "audioUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Amazing_Grace_%28USAFB_jazz_vocal%29.ogg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amazing_Grace_(USAFB_jazz_vocal).ogg",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "mime": "audio/ogg",
+    "provider": "wikimedia",
+    "tempo": null,
+    "knownFeatures": [
+      "duration"
+    ],
+    "sections": [
+      {
+        "name": "Vocal recording",
+        "start": 0,
+        "end": 385
+      }
+    ]
+  },
+  {
+    "key": "VC0000000002",
+    "title": "Amazing Grace — Choir (excerpt)",
+    "artist": "Choir / Sain (Recordiau) Cyf.",
+    "duration": 30,
+    "genre": "Choral",
+    "year": 1989,
+    "filename": "Amazing Grace Choir.ogg",
+    "audioUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Amazing_Grace_-_Choir.ogg",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Amazing_Grace_-_Choir.ogg",
+    "license": "CC BY-SA 3.0 · Sain (Recordiau) Cyf. · unmodified excerpt",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "mime": "audio/ogg",
+    "provider": "wikimedia",
+    "tempo": null,
+    "knownFeatures": [
+      "duration"
+    ],
+    "sections": [
+      {
+        "name": "Vocal recording",
+        "start": 0,
+        "end": 30
+      }
+    ]
+  }
+]
